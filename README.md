@@ -33,6 +33,15 @@ The Hello message should appear as below.
 In new terminal, run: 
 python manage.py runserver
 
+Below errors may appear:
+"You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them."
+
+If any errors are there run:
+python manage.py migrate
+
+Again restart the django server after the errors are fixed.
+
 Django Server should start at http://127.0.0.1:8000/
 
 ![alt text](image-3.png)
