@@ -30,7 +30,7 @@ The Hello message should appear as below.
 
 ![alt text](image-1.png)
 
-Run: 
+In new terminal, run: 
 python manage.py runserver
 
 Django Server should start at http://127.0.0.1:8000/
