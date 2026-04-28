@@ -11,24 +11,33 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ## Pre-requisites:
 Python 3.9 and higher
 FastAPI
+Django
 
 ## Install Dependencies:
 
 pip install -r requirements.txt
 
+## Change Directory
+cd .\stellarrimz_api\myproject\
+
 ## Run the FastAPI
-uvicorn fastapi_backend:app --reload
+uvicorn myapp.fastapi:app --reload --port 8001
 
 The application should start:
 
 ![alt text](image.png)
 
-Go to URL: http://127.0.0.1:8000/api/data
+Go to URL: http://127.0.0.1:8001/api/data
 The Hello message should appear as below.
 
 ![alt text](image-1.png)
 
-Open stellarrimz_api/stellarrimz_welcome2.html in a browser. The main API page will appear.
+Run: 
+python manage.py runserver
+
+Django Server should start at http://127.0.0.1:8000/
+
+![alt text](image-3.png)
 
 Go to Interactive Demo:
 Click "Say Hi!"

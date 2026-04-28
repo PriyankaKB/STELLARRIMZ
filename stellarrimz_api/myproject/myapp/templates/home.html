@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to StellarRimz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #000000; /* Crimson */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }  
+    .logo {
+    height: 60px;
+    position: absolute;
+    left: 20px;
+    }
+    .site-title {
+      margin: 0;
+      text-align: center;
+      flex: 1;
+      font-size: 2em;
+    }
+    .hero {
+      background: #CD2653; /* Crimson */
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .button {
+      background: #CD2653;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .button:hover {
+      background: #CD2653;
+    }
+    #api-output {
+      margin-top: 20px;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #CD2653;
+    }
+    .columns {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .column {
+      flex: 1;
+      max-width: 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-top: 4px solid #CD2653; /* Crimson accent */
+    }
+    footer {
+      background: #000000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo on the left -->
+    <a href="https://stellarrimz.com">
+    <img src="{% static 'STELLARRIMZ.png' %}" alt="Stellarrimz Logo" class="logo" href="https://stellarrimz.com/">
+    </a>
+    <!-- Center heading -->
+    <h1 class="site-title">StellarRimz</h1>
+    <nav>
+      <a href="https://stellarrimz.com/">Home</a>
+      <a href="https://stellarrimz.com/resources/">Resources</a>
+      <a href="https://stellarrimz.com/blog-2/">Blog</a>
+      <a href="https://stellarrimz.com/contact/">Contact</a>
+      <a href="https://stellarrimz.com/login-2/">Login</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Discover • Invent • Innovate</h2>
+    <p>Namaste and Welcome to StellarRimz — a hub for science, technology, and collaboration.</p>
+  </div>
+
+  <div class="section">
+    <h2>About StellarRimz</h2>
+    <p>We showcase innovations, share knowledge, and welcome collaborators in science and technology.</p>
+    <div class="columns">
+      <div class="column">
+        <h3>Discover</h3>
+        <p>Explore the latest updates in science and technology.</p>
+      </div>
+      <div class="column">
+        <h3>Invent</h3>
+        <p>Expand boundaries with new ideas and prototypes.</p>
+      </div>
+      <div class="column">
+        <h3>Innovate</h3>
+        <p>Shape the future with collaborative technology projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Interactive Demo</h2>
+    <button class="button" onclick="callApi()">Say Hi!</button>
+    <div id="api-output"></div>
+  </div>
+
+<script>
+    async function callApi() {
+      try {
+        const response = await fetch("http://127.0.0.1:8001/api/data"); // adjust if using ngrok
+        if (!response.ok) throw new Error("API error");
+        const data = await response.json();
+        document.getElementById("api-output").innerHTML =
+        `<p style="font-weight:bold; color:#CD2653;">${data.message}</p>
+         <img src="${data.image_url}" alt="Bot Image" style="border:3px solid #000000; border-radius:8px; margin-top:10px;" />`;
+      } catch (err) {
+        document.getElementById("api-output").innerText = "Error: " + err.message;
+      }
+    }
+  loadData();
+</script>
+
+  <footer>
+    <p>© 2026 StellarRimz — All Rights Reserved</p>
+  </footer>
+</body>
+</html>
