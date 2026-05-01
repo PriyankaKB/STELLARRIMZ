@@ -1,4 +1,4 @@
-# STELLAR_RIMZ
+# STELLARRIMZ
 APIs for StellarRimz
 
 ## Create a Virtual Environment for the project
