@@ -27,21 +27,21 @@ The application should start:
 
 Go to URL: http://127.0.0.1:8001/api/data
 
-The Hello message should appear as below.
+The Hello message should appear as follows.
 
 ![alt text](image-4.png)
 
-In new terminal, run: 
+In the new terminal, run: 
 python manage.py runserver
 
-Below errors may appear:
-"You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+The following errors may appear:
+"You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, and sessions.
 Run 'python manage.py migrate' to apply them."
 
-If any errors are there run:
+If any errors are there, run:
 python manage.py migrate
 
-Again restart the django server after the errors are fixed.
+Restart the Django server after the errors are fixed.
 
 Django Server should start at http://127.0.0.1:8000/
 
@@ -52,6 +52,13 @@ Click "Say Hi!"
 
 Stell-E will respond.
 ![alt text](image-2.png)
+
+# Projects
+- [Project Stell‑E] (https://github.com/PriyankaKB/Project-Stell-E)
+  Open initiative for environmental robotics and pollution‑control prototypes.
+
+
+
 
 
 
