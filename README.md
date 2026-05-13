@@ -6,7 +6,8 @@ python -m venv .venv
 
 ### Launch the virtual environment
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\.venv\Scripts\Activate.ps1     
+
+.\\.venv\Scripts\Activate.ps1     
 
 ## Pre-requisites:
 Python 3.9 and higher
